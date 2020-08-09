@@ -1,0 +1,8 @@
+{
+      "env":{
+
+            "MONGO_ATLAS_PW":"admin",
+            "JWT_KEY":"JWT_SECRET_KEY",
+            "BASE_URL":"http://localhost:3001/"
+      }
+}

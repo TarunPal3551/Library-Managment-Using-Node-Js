@@ -1,0 +1,44 @@
+body{
+  background-color: #eeeeee;
+  text-align: center;
+}
+form {
+  position: relative;
+  margin-top: 4rem;
+  background-color: #222831;
+  width: 60%;
+  margin-left: 20%;
+}
+h1{
+  color: #e4e3e3;
+  font-family: 'Lemonada', cursive;
+  font-size: 2rem;
+}
+.fa{
+  color: #cedebd;
+}
+.start{
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+.gen{
+  margin-top: 0.7rem;
+  margin-bottom: 3rem;
+  color: #f4f6ff;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+.form-control{
+  margin: 0.7rem;
+  color: #4b5d67;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+.btn{
+  margin: 2%;
+}
+.login{
+  margin-top: 10%;
+}
+.login-container{
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}

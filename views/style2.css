@@ -1,0 +1,63 @@
+body{
+
+}
+.discount-text{
+  font-family: 'Roboto Slab', serif;
+  margin-top: 2rem;
+  font-size: 1.3rem;
+  padding-bottom: 2rem;
+  text-align: center;
+}
+.discount{
+  color: red;
+}
+.welcome{
+  font-family: 'Roboto Slab', serif;
+  color: #206a5d;
+  padding: 2rem;
+  text-align: center;
+}
+.icon{
+  width: 20%;
+
+}
+.first-container{
+  background-color: #cedebd;
+  width: 100%;
+  text-align: center;
+}
+.second-container{
+  text-align: center;
+  margin-top: 3rem;
+}
+.space{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.img{
+  margin-left: 3rem;
+  text-align: center;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+.third-container{
+  background-color: #ebecf1;
+  text-align: center;
+}
+.book{
+  width: 100px;
+  height: 140px;
+  margin: 2rem;
+}
+.book-name{
+  font-family: 'Chilanka', cursive;
+}
+.fourth-container{
+  background-color: #cedebd;
+}
+.container{
+  padding-top: 3rem;
+}
+.contact{
+  font-family: 'Roboto Slab', serif;
+}
