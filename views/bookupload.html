@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,31 +26,28 @@
 
 <body>
   <section id="upper">
-    <form class="" action="index.html" method="post" style="border: 1px solid #ccc;">
+    <form method="POST" action="/api/uploadBooks" 
+    enctype="multipart/form-data" style="border: 1px solid #ccc;">
       <div class="container">
 
           <h1 class='welcome-text'>Welcome<br>to<br>myBook.com</h1>
           <i class="fa fa-book fa-4x"></i>
         <div class='start'>
-          <label class="form-control">username</label><br>
-          <input class="form-control " type="text" placeholder="username" ><br>
-          <label class="form-control ">password</label><br>
-          <input class="form-control " type="password" placeholder="password"><br>
-          <label class="form-control ">confirm password</label><br>
-          <input class="form-control " type="password" placeholder="confirm password"><br>
-          <label class="form-control ">mobile number</label><br>
-          <input class="form-control " type="text" placeholder="Enter number"><br>
-          <label class="form-control ">Email</label><br>
-          <input class="form-control " type="text" placeholder="Email">
+          <label class="form-control">Book Name</label><br>
+          <input class="form-control " type="text" placeholder="bookname" ><br>
+          <label class="form-control ">Select Book Image</label><br>
+          <input class="form-control " type="file" name="bookImage"><br>
+          <label class="form-control ">Select PDF</label><br>
+          <input class="form-control " type="file" name="bookPdf"><br>
+
           <div class="btn">
-            <button type="submit" class="btn"> <a href="mainpage.html">sign up</a> </button><br>
-            <button type="submit" class="btn"><a href="login.html">Log in</a></button>
+            <input type="submit" name="btn_upload_book" value="Upload" />
           </div>
         </div>
       </div>
     </form>
   </section>
-  <script src='app.js'></script>
+  <script src='/routes/auth.js'></script>
 </body>
 
 </html>

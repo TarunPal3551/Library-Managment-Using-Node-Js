@@ -5,24 +5,18 @@ const mongoose = require('mongoose');
 const app = express();
 const authRoute=require('./routes/auth');
 
-const MongoClient = require('mongodb').MongoClient;
-const uri = "mongodb+srv://admin:bookstore@cluster0.l1wgp.mongodb.net/book?retryWrites=true&w=majority";
-const client = new MongoClient(uri, {  useNewUrlParser: true,
+mongoose.connect('mongodb+srv://admin:admin@firstnode-ijo0j.mongodb.net/test?retryWrites=true&w=majority', ({
+      useNewUrlParser: true,
       useUnifiedTopology: true,
       useFindAndModify: false,
       useCreateIndex: true
-});
-client.connect(err => {
-  const collection = client.db("test").collection("devices");
-  // perform actions on the collection object
-  client.close();
-});
+}));
 mongoose.Promise = global.Promise;
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-//app.use('/uploads',express.static('uploads'));
- 
+app.use('/uploads',express.static('uploads'));
+
 app.use((req, res, next) => {
       res.header("Access-Control-Allow-Origin", "*");
       res.header("Access-Control-Allow-Headers", 
@@ -41,6 +35,10 @@ app.route("/").get((req,res)=>{
     res.render('index.html');
     res.send("Working Successfully ");
 });
+app.route("/uploadBooks").get((req,res)=>{
+      res.render('./views/bookupload.html');
+      res.send("Working Successfully ");
+  });
 
 app.use('/api',authRoute);
 
