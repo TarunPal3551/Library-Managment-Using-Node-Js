@@ -23,24 +23,23 @@
 
 <body>
   <section id="upper">
-    <form class="" action="index.html" method="post" style="border: 1px solid #ccc;">
+    <form class="signup" action="/api/register" method="post" style="border: 1px solid #ccc;">
       <div class="container">
-
           <h1 class='welcome-text'>Welcome<br>to<br>myBook.com</h1>
           <i class="fa fa-book fa-4x"></i>
         <div class='start'>
           <label class="form-control">username</label><br>
           <input class="form-control " type="text" placeholder="username" ><br>
           <label class="form-control ">password</label><br>
-          <input class="form-control " type="password" placeholder="password"><br>
+          <input class="form-control " type="password" placeholder="password" name="password"><br>
           <label class="form-control ">confirm password</label><br>
           <input class="form-control " type="password" placeholder="confirm password"><br>
           <label class="form-control ">mobile number</label><br>
           <input class="form-control " type="text" placeholder="Enter number"><br>
           <label class="form-control ">Email</label><br>
-          <input class="form-control " type="text" placeholder="Email">
+          <input class="form-control " type="text" placeholder="Email" name="email">
           <div class="btn">
-            <button type="submit" class="btn"> <a href="mainpage.html">sign up</a> </button><br>
+            <button type="submit" class="btn" name="signup">Sign Up</button><br>
             <button type="submit" class="btn"><a href="login.html">Log in</a></button>
           </div>
         </div>

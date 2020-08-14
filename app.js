@@ -16,6 +16,7 @@ app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use('/uploads',express.static('uploads'));
+app.use('/books',express.static('uploads'));
 
 app.use((req, res, next) => {
       res.header("Access-Control-Allow-Origin", "*");
@@ -29,12 +30,16 @@ app.use((req, res, next) => {
       }
       next();
 });
+app.set('views', __dirname + '/views');
+app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'html');
 app.set("view engine","ejs");
 app.use(express.static('views'));
 app.route("/").get((req,res)=>{
     res.render('index.html');
     res.send("Working Successfully ");
 });
+
 app.route("/uploadBooks").get((req,res)=>{
       res.render('./views/bookupload.html');
       res.send("Working Successfully ");

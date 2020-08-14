@@ -61,29 +61,20 @@ router.post(
   ]),
   (req, res, next) => {
     console.log(req.files.bookImage[0]);
-  
-    
-    const books=new Book({
-      name:req.body.bookname,
-      bookPdf:req.files.bookPdf[0],
-      bookImage:req.files.bookImage[0],
-      _id:new mongoose.Types.ObjectId()
-    });
-    books.save().then(result=>{
-if(result!=null){
-  res.send(
-    `Book Uploaded Successfully...Go Back`
-  );
-}
-else
-{
-  res.send(
-    `File not uploaded`
-  );  
-}
-    });
 
-   
+    const books = new Book({
+      name: req.body.bookname,
+      bookPdf: req.files.bookPdf[0],
+      bookImage: req.files.bookImage[0],
+      _id: new mongoose.Types.ObjectId(),
+    });
+    books.save().then((result) => {
+      if (result != null) {
+        res.send(`Book Uploaded Successfully...Go Back`);
+      } else {
+        res.send(`File not uploaded`);
+      }
+    });
   }
 );
 
@@ -116,21 +107,24 @@ router.post("/login", (req, res, next) => {
               }
             );
             //   req.session.user = user[0];
-            return res.status(200).json({
-              message: "Auth Successful",
-              token: token,
-              UserDetails: user[0],
+            return res.redirect("http://localhost:3001/mainpage.html");
+            //  res.status(200).json({
+            //     message: "Auth Successful",
+            //     token: token,
+            //     UserDetails: user[0],
+            //   });
+          } else {
+            res.status(500).json({
+              message: "Auth Failed",
             });
           }
-          res.status(500).json({
-            message: "Auth Failed",
-          });
         });
       }
     });
 });
 router.post("/register", (req, res, next) => {
   console.log(req.body.email);
+
   bcrypt.hash(req.body.password, 10, function (err, hashedPassword) {
     const passwordHashed = hashedPassword;
     if (err) {
@@ -152,17 +146,20 @@ router.post("/register", (req, res, next) => {
               .save()
               .then((result) => {
                 console.log(user);
+                res.send("registration success");
                 res.status(200).json({
                   error: "registration success",
                 });
               })
               .catch((error) => {
+                res.send("registration failed");
                 res.status(400).json({
                   error: "error in registration",
                 });
                 console.log(error);
               });
           } else {
+            res.send("Already Exists");
             res.status(401).json({
               error: "already exists",
             });
@@ -170,6 +167,24 @@ router.post("/register", (req, res, next) => {
         });
     }
   });
+});
+router.get("/getBooks", (req, res, next) => {
+  Book.find()
+    .exec()
+    .then((docs) => {
+      console.log(docs);
+      const response = {
+        count: docs.length,
+        books: docs.map((docs) => {
+          res.send(docs.bookImage.path);
+          return docs;
+        }),
+      };
+      res.status(200).json(response);
+     
+    
+    });
+    
 });
 
 module.exports = router;

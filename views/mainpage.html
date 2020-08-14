@@ -58,87 +58,14 @@
       <img class="img" src="https://images.unsplash.com/photo-1589200348508-adf9bb6e0828?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60" alt="">
     </div>
   </div>
-  <div class="third-container">
+  <div class="third-container" action ="api/getBooks" method="Get">
     <div class="row">
-    <div class=" col-lg-3 col-sm-6">
-      <img class='book' src="books/1.jpg" alt="">
-      <p class="book-name">Animal farm <br>-George Orwell</p>
-    </div>
-    <div class=" col-lg-3 col-sm-6">
-      <img class='book' src="books/2.jpg" alt="">
-      <p class="book-name">The Art of War<br>-Szu Tzu</p>
-    </div>
-    <div class=" col-lg-3 col-sm-6">
-      <img class='book'  src="books/3.jpg" alt="">
-      <p class="book-name">Everybody Writes <br>-Ann Hanley</p>
-    </div>
-    <div class=" col-lg-3 col-sm-6">
-      <img  class='book' src="books/4.jpg" alt="">
-      <p class="book-name">1984<br>George Orwell</p>
-    </div>
-    <div class=" col-lg-3 col-sm-6">
-      <img class='book'  src="books/5.jpg" alt="">
-      <p class="book-name">How to learn<br>almost anything<br>in 48hr<br>-Tansek Ali</p>
-    </div>
-    <div class=" col-lg-3 col-sm-6">
-      <img class="book" src="books/6.jpg" alt="">
-      <p class="book-name">Astronomy<br>-Unknown</p>
-    </div>
-    <div class=" col-lg-3 col-sm-6">
-      <img class='book'  src="books/7.jpg" alt="">
-      <p class="book-name">The leader who<br>had no title<br>-Robin Sharma</p>
-    </div>
-    <div class="col-lg-3 col-sm-6">
-      <img class='book'  src="books/8.jpg" alt="">
-      <p class="book-name">Julius Ceaser<br>-William Shakespeare</p>
-    </div>
-    <div class="col-lg-3 col-sm-6">
-      <img  class='book' src="books/9.jpg" alt="">
-      <p class="book-name">Mein kampf<br>-Adolf Hitler</p>
-    </div>
-    <div class="col-lg-3 col-sm-6">
-      <img  class='book' src="books/10.jpg" alt="">
-      <p class="book-name">Rich Dad poor dad<br>-Robert T. Kiyosaki</p>
-    </div>
-    <div class="col-lg-3 col-sm-6">
-      <img class='book'  src="books/11.jpg" alt="">
-      <p class="book-name">The Alchemist<br>-Paulo Coelho</p>
-    </div>
-    <div class="col-lg-3 col-sm-6">
-      <img class='book'  src="books/12.jpg" alt="">
-      <p class="book-name">The Intelligent<br>Investor<br>-Benjamin Graham</p>
-    </div>
-    <div class="col-lg-3 col-sm-6">
-      <img class='book'  src="books/13.jpg" alt="">
-      <p class="book-name">The Laws of<br>Human nature<br>-Robert Greene</p>
-    </div>
-    <div class="col-lg-3 col-sm-6">
-      <img class='book'  src="books/14.jpg" alt="">
-      <p class="book-name">The Monk who<br>sold his ferrari<br>-Robin Sharma</p>
-    </div>
-    <div class="col-lg-3 col-sm-6">
-      <img class='book'  src="books/15.jpg" alt="">
-      <p class="book-name">The power of<br>Subconsious mind<br>-Joseph Murphy</p>
-    </div>
-    <div class="col-lg-3 col-sm-6">
-      <img class='book'  src="books/16.jpg" alt="">
-      <p class="book-name">River King<br>-Alice Hoffman</p>
-    </div>
-    <div class="col-lg-3 col-sm-6">
-      <img class='book'  src="books/17.jpg" alt="">
-      <p class="book-name">The subtle art<br>of not giving<br>a f*uck<br>-Mark Manson</p>
-    </div>
-    <div class="col-lg-3 col-sm-6">
-      <img class='book'  src="books/18.jpg" alt="">
-      <p class="book-name">Think & Grow<br>Rich<br>-Napoleon Hill</p>
-    </div>
-    <div class="col-lg-3 col-sm-6">
-      <img class='book'  src="books/19.jpg" alt="">
-      <p class="book-name">Bleak House<br>-Charles Dickens</p>
-    </div>
-    <div class="col-lg-3 col-sm-6">
-      <img class='book'  src="books/20.jpg" alt="">
-      <p class="book-name">A Christmas Carol<br>-Charles Dickens</p>
+    <div class=" col-lg-3 col-sm-6" div id = "image"  >
+      {{#each images}}
+      <img src="{{this}}" height="180" width="250">
+    {{/each}}
+    <!-- <p class="book-name" name="bookname">Animal farm <br>-George Orwell</p> -->
+      
     </div>
   </div>
   </div>
