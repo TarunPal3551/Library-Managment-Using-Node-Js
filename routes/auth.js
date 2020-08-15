@@ -107,7 +107,7 @@ router.post("/login", (req, res, next) => {
               }
             );
             //   req.session.user = user[0];
-            return res.redirect("http://localhost:3001/mainpage.html");
+            return res.redirect("/api/getBooks");
             //  res.status(200).json({
             //     message: "Auth Successful",
             //     token: token,
@@ -176,11 +176,12 @@ router.get("/getBooks", (req, res, next) => {
       const response = {
         count: docs.length,
         books: docs.map((docs) => {
-          res.send(docs.bookImage.path);
+         // res.send(docs.bookImage.path);
           return docs;
         }),
       };
-      res.status(200).json(response);
+  
+      return res.render('mainpage.ejs', { books: response.books})
      
     
     });

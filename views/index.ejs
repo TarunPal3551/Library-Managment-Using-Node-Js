@@ -1,57 +1,126 @@
-<%- include('layouts/head.ejs')%>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
 
-    <body>
+<head>
+  <meta charset="utf-8">
+  <title>WELCOME-myBook.com</title>
+  <link rel="stylesheet" href="style2.css">
+  <!-- google fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Chilanka&display=swap" rel="stylesheet">
+  <!-- fontawesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
-        <%- include('layouts/navigation.ejs')%>
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</head>
 
-            <!-- Page Content -->
-            <div class="container">
-
-                <div class="row">
-
-                    <%- include('layouts/sidebar.ejs')%>
-
-
-                        <div class="col-lg-9">
-
-                            <%- include('layouts/carousel.ejs')%>
-
-                                <div class="row">
-
-                                    <% for(let p of prods) {%>
-                                        <div class="col-lg-4 col-md-6 mb-4">
-                                            <div class="card h-100">
-                                                <a href="#"><img class="card-img-top" src="<%= p.imageURL%>" alt=""></a>
-                                                <div class="card-body">
-                                                    <h4 class="card-title">
-                                                        <a href="#">
-                                                            <%= p.title%>
-                                                        </a>
-                                                    </h4>
-                                                    <h5>$
-                                                        <%= p.price%>
-                                                    </h5>
-                                                    <!-- <p class="card-text">
-                                                        <%= p.description%>
-                                                    </p> -->
-                                                </div>
-                                                <div class="card-footer">
-                                                    <a class="btn btn-primary" href="/products/<%=p.id%>" role="button">View Details</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <%
-                                    }
-                                    %>
-
-                                </div>
-                                <!-- /.row -->
-                        </div>
-                        <!-- /.col-lg-9 -->
-                </div>
-                <!-- /.row -->
-
+<body>
+  <div class="first-container">
+    <div class="upper-container">
+      <h1 class="welcome">Welcome to myBook.com</h1>
+      <img class="icon" src="icon.png" alt="">
+      <p class="discount-text">Get <span class="discount">20%</span> off on your first order</p>
+    </div>
+  </div>
+  <div class="second-container">
+    <div class="row" id="button">
+      <div class="space col-sm-3">
+        <button type="button" class="btn btn-secondary">
+          <i class="fa fa-search"></i> SEACRH
+        </button>
+      </div>
+      <div class="space col-sm-3">
+        <button type="button" class="btn btn-secondary">
+          <i class="fa fa-download"></i> DOWNLOAD
+        </button>
+      </div>
+      <div class="space col-sm-3">
+        <button type="button" class="btn btn-secondary">
+          <i class="fa fa-print"></i> PRINT
+        </button>
+      </div>
+      <div class="space col-sm-3">
+        <button type="button" class="btn btn-secondary">
+          <i class="fa fa-star"></i> FAVOURITE
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="image-container">
+    <div class="row">
+      <img class='img' src="https://images.unsplash.com/photo-1485322551133-3a4c27a9d925?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60" alt="">
+      <img class='img' src="https://images.unsplash.com/photo-1583526241256-cb18e8635e5b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60" alt="">
+      <img class="img" src="https://images.unsplash.com/photo-1589200348508-adf9bb6e0828?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60" alt="">
+    </div>
+  </div>
+  <div class="third-container">
+    <% books.forEach((book) => { %>
+      <div class="book">
+        <div class=" col-lg-3 col-sm-6" div id = "image">
+          <img src="<%= book.id %>" height="180" width="250">
+          <p class="bookname" name="bookname"><%= book.name %><br></p>
+        </div>
+        
+     
+          
+      </div>
+    <% }) %>
+   
+  </div>
+  </div>
+  <div class="fourth-container">
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-4 offset-1 col-sm-2">
+            <h5>Links</h5>
+            <ul class="list-unstyled">
+              <li><a href="#button">Search</a></li>
+              <li><a href="#button">Download</a></li>
+              <li><a href="#button">Print</a></li>
+              <li><a href="#button">Favourite</a></li>
+            </ul>
+          </div>
+          <div class="col-7 col-sm-5">
+            <h5 class="contact">Contact us</h5>
+            <address>
+              GANGANAGAR , MEERUT , Uttar Pradesh<br />
+              India<br />
+              <i class="fa fa-phone fa-lg"></i>: +852 1234 5678<br />
+              <i class="fa fa-fax fa-lg"></i>: +852 8765 4321<br />
+              <i class="fa fa-envelope fa-lg"></i>:
+              <a href="mailto:confusion@food.net">myBook.com</a>
+            </address>
+          </div>
+          <div class="col-12 col-sm-4 align-self-center">
+            <div class="text-center">
+              <a class="btn btn-social-icon btn-google" href="http://google.com/+"><i class="fa fa-google-plus"></i></a>
+              <a class="btn btn-social-icon btn-facebook" href="http://www.facebook.com/profile.php?id="><i class="fa fa-facebook"></i></a>
+              <a class="btn btn-social-icon btn-linkedin" href="http://www.linkedin.com/in/"><i class="fa fa-linkedin"></i></a>
+              <a class="btn btn-social-icon btn-twitter" href="http://twitter.com/"><i class="fa fa-twitter"></i></a>
+              <a class="btn btn-social-icon btn-google" href="http://youtube.com/"><i class="fa fa-youtube"></i></a>
+              <a class="btn btn-social-icon" href="mailto:"><i class="fa fa-envelope-o"></i></a>
             </div>
-            <!-- /.container -->
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-auto">
+            <p class="discount-text">© Copyright 2020 myBook.com </p>
+          </div>
+        </div>
+      </div>
+    </footer>
 
-            <%- include('layouts/end.ejs')%>
+  </div>
+  <div class="last-container">
+
+  </div>
+  <script src="app.js"></script>
+</body>
+
+</html>
